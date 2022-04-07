@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="refresh" content="120"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Prices</title>
+</head>
+<body>
+  
+
+  <script>
+     
+     
+     const XOMData = '/xom';
+     const xomDataTwo = '/xom/second'
+     const lngData = '/lng'
+     const rioData = '/rio'
+     const cegData = '/ceg'
+     const bgData = '/bg'
+     const shlxData = '/shlx'
+     const pyplData = '/pypl'
+     const rivnData = '/rivn'
+
+
+      const fetched_xom_data = async () =>{
+      const dataXom = await fetch(XOMData)
+      const responseData = await dataXom.json()
+      console.log(responseData)
+    }
+    
+    //second XOM with less shares
+
+     const fetched_xom_second = async () =>{
+      const dataXom = await fetch(xomDataTwo)
+      const responseData = await dataXom.json()
+      console.log(responseData)
+    }
+
+
+     const fetched_lng_data = async () =>{
+      const dataLng = await fetch(lngData)
+      const responseData = await dataLng.json()
+      console.log(responseData)
+    }
+     
+   
+
+
+
+    const fetched_rio_data = async () =>{
+      const datario = await fetch(rioData)
+      const responseData = await datario.json()
+      console.log(responseData)
+    }
+
+    
+
+    const fetched_ceg_data = async () =>{
+      const dataCeg = await fetch(cegData)
+      const responseData = await dataCeg.json()
+      console.log(responseData)
+    }
+    
+
+    const fetched_bg_data = async () =>{
+      const dataBg = await fetch(bgData)
+      const responseData = await dataBg.json()
+      console.log(responseData)
+    }
+      
+
+
+    const fetched_shlx_data = async () =>{
+      const dataShlx = await fetch(shlxData)
+      const returnedSHL = await dataShlx.json()
+      console.log(returnedSHL)
+    }
+
+   
+
+    const fetched_pypl_data = async () =>{
+      const dataPypl = await fetch(pyplData)
+      const responseData = await dataPypl.json()
+      console.log(responseData)
+    }
+     
+
+    const fetched_rivn_data = async () =>{
+      const dataRivn = await fetch(rivnData)
+      const responseData = await dataRivn.json()
+      console.log(responseData)
+    }    
+    
+
+    const runAllFunction = () =>{
+
+      setTimeout(fetched_xom_data, 60000)
+      setTimeout(fetched_xom_second,60000)
+      setTimeout(fetched_lng_data, 60000)
+      setTimeout(fetched_rio_data, 60000)
+      setTimeout(fetched_bg_data, 120000)
+      setTimeout(fetched_ceg_data, 120000)
+      setTimeout(fetched_shlx_data, 120000)
+      setTimeout(fetched_pypl_data, 120000)
+      setTimeout(fetched_rivn_data, 120000)
+
+      
+      // fetched_xom_data()
+      // fetched_xom_second()
+      // fetched_lng_data()
+      // fetched_rio_data()
+      // fetched_bg_data()
+      // fetched_ceg_data()
+      // fetched_shlx_data()
+      // fetched_pypl_data()
+      // fetched_rivn_data()
+    }
+   runAllFunction()
+    
+  </script>
+</body>
+</html>
