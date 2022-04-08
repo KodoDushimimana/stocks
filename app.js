@@ -194,6 +194,8 @@ app.get('/ceg', async (req, res) => {
 app.get('/bg', async (req, res) => {
 	const bgData = await fetch(bg_url);
 	const responseData = await bgData.json();
+
+
 	const high = responseData.high;
 	const fromDate = responseData.from;
 	const close = responseData.close;
@@ -229,6 +231,7 @@ app.get('/shlx', async (req, res) => {
 	const shlxData = await fetch(shlx_url);
 	const responseData = await shlxData.json();
 
+
 	const high = responseData.high;
 	const fromDate = responseData.from;
 	const close = responseData.close;
@@ -263,6 +266,7 @@ app.get('/shlx', async (req, res) => {
 app.get('/pypl', async (req, res) => {
 	const pyplData = await fetch(pypl_url);
 	const responseData = await pyplData.json();
+
 	const high = responseData.high;
 	const fromDate = responseData.from;
 	const close = responseData.close;
@@ -297,6 +301,7 @@ app.get('/pypl', async (req, res) => {
 app.get('/rivn', async (req, res) => {
 	const rivnData = await fetch(rivn_url);
 	const responseData = await rivnData.json();
+	
 	const high = responseData.high;
 	const fromDate = responseData.from;
 	const close = responseData.close;

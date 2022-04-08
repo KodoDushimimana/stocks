@@ -10,8 +10,127 @@
 <body>
   
   <h1>This will be displaying the stock Market Last price</h1>
-    <p>Work in progress...</p>
+  <p>Work in progress...</p>
+  <div class="wrapper">
+
+    <div class="xom">
+      <div class="xom_header">
+        <h2>Exxon Mobile Corp</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="xom_symbol"></li>
+          <li id="xom_high"></li>
+          <li id="xom_close"></li>
+          <li id="xom_fromDate"></li>
+        </ul>
+      </div>
+
+      <div class="xom_two_header">
+        <h2>Exxon Mobile Corp</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="xom_two_symbol"></li>
+          <li id="xom_two_high"></li>
+          <li id="xom_two_close"></li>
+          <li id="xom_two_fromDate"></li>
+        </ul>
+      </div>
+
+      <div class="lng_header">
+        <h2>Cheniere Energy Inc</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="lng_symbol"></li>
+          <li id="lng_high"></li>
+          <li id="lng_close"></li>
+          <li id="lng_fromDate"></li>
+        </ul>
+      </div>
+      
+      <div class="rio_header">
+        <h2>Rio Tinto PLC</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="rio_symbol"></li>
+          <li id="rio_high"></li>
+          <li id="rio_close"></li>
+          <li id="rio_fromDate"></li>
+        </ul>
+      </div>
+
+      <div class="ceg_header">
+        <h2>Constellation Energy Corp</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="ceg_symbol"></li>
+          <li id="ceg_high"></li>
+          <li id="ceg_close"></li>
+          <li id="ceg_fromDate"></li>
+        </ul>
+      </div>
+      
+      <div class="bg_header">
+        <h2>Bunge Ltd</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="bg_symbol"></li>
+          <li id="bg_high"></li>
+          <li id="bg_close"></li>
+          <li id="bg_fromDate"></li>
+        </ul>
+      </div>
+
+      <div class="shlx_header">
+        <h2>Shell Midstream Partners LP</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="shlx_symbol"></li>
+          <li id="shlx_high"></li>
+          <li id="shlx_close"></li>
+          <li id="shlx_fromDate"></li>
+        </ul>
+      </div>
+
+      <div class="pypl_header">
+        <h2>Paypal Holdings Inc</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="pypl_symbol"></li>
+          <li id="pypl_high"></li>
+          <li id="pypl_close"></li>
+          <li id="pypl_fromDate"></li>
+        </ul>
+      </div>
+
+      <div class="rivn_header">
+        <h2>Rivian Automotivate Inc Class A</h2>
+      </div>
+      <div class="dataset">
+        <ul>
+          <li id="rivn_symbol"></li>
+          <li id="rivn_high"></li>
+          <li id="rivn_close"></li>
+          <li id="rivn_fromDate"></li>
+        </ul>
+      </div>
+      
+
+
+
+    </div>
+
+   </div>
   <script>
+     
+
      
      
      const XOMData = '/xom';
@@ -28,7 +147,24 @@
       const fetched_xom_data = async () =>{
       const dataXom = await fetch(XOMData)
       const responseData = await dataXom.json()
-      console.log(responseData)
+
+      const symbolXom = responseData.symbol
+      const closeXom = responseData.close
+      const highXom = responseData.high
+      const dateXom = responseData.fromDate
+      
+
+     const symbol = document.getElementById('xom_symbol')
+     const high = document.getElementById('xom_high')
+     const close = document.getElementById('xom_close')
+     const datefrom = document.getElementById('xom_fromDate')
+    
+      symbol.textContent = symbolXom
+      high.textContent = highXom
+      close.textContent = closeXom
+      datefrom.textContent = dateXom
+
+      
     }
     
     //second XOM with less shares
@@ -36,14 +172,45 @@
      const fetched_xom_second = async () =>{
       const dataXom = await fetch(xomDataTwo)
       const responseData = await dataXom.json()
-      console.log(responseData)
+
+     const symbol = document.getElementById('xom_two_symbol')
+     const high = document.getElementById('xom_two_high')
+     const close = document.getElementById('xom_two_close')
+     const datefrom = document.getElementById('xom_two_fromDate')
+
+      const symbolXomt = responseData.symbol
+      const closeXomt = responseData.close
+      const highXomt = responseData.high
+      const dateXomt = responseData.fromDate
+
+      symbol.textContent = symbolXomt //'t' means two
+      high.textContent = highXomt
+      close.textContent = closeXomt
+      datefrom.textContent = dateXomt
+      
     }
 
 
      const fetched_lng_data = async () =>{
       const dataLng = await fetch(lngData)
       const responseData = await dataLng.json()
-      console.log(responseData)
+
+      const symbolLng = responseData.symbol
+      const closeLng = responseData.close
+      const highLng = responseData.high
+      const dateLng = responseData.fromDate
+
+     const symbol = document.getElementById('lng_symbol')
+     const high = document.getElementById('lng_high')
+     const close = document.getElementById('lng_close')
+     const datefrom = document.getElementById('lng_fromDate')
+    
+
+      symbol.textContent = symbolLng
+      high.textContent = highLng
+      close.textContent = closeLng
+      datefrom.textContent = dateLng
+
     }
      
    
@@ -53,7 +220,21 @@
     const fetched_rio_data = async () =>{
       const datario = await fetch(rioData)
       const responseData = await datario.json()
-      console.log(responseData)
+
+      const symbolRio = responseData.symbol
+      const closeRio = responseData.close
+      const highRio = responseData.high
+      const dateRio = responseData.fromDate
+
+     const symbol = document.getElementById('rio_symbol')
+     const high = document.getElementById('rio_high')
+     const close = document.getElementById('rio_close')
+     const datefrom = document.getElementById('rio_fromDate')
+
+     symbol.textContent = symbolRio
+      high.textContent = highRio
+      close.textContent = closeRio
+      datefrom.textContent = dateRio
     }
 
     
@@ -61,22 +242,67 @@
     const fetched_ceg_data = async () =>{
       const dataCeg = await fetch(cegData)
       const responseData = await dataCeg.json()
-      console.log(responseData)
+
+      const symbolCeg = responseData.symbol
+      const closeCeg = responseData.close
+      const highCeg = responseData.high
+      const dateCeg = responseData.fromDate
+
+      const symbol = document.getElementById('ceg_symbol')
+     const high = document.getElementById('ceg_high')
+     const close = document.getElementById('ceg_close')
+     const datefrom = document.getElementById('ceg_fromDate')
+
+      symbol.textContent = symbolCeg
+      high.textContent = highCeg
+      close.textContent = closeCeg
+      datefrom.textContent = dateCeg
+
+
     }
     
 
     const fetched_bg_data = async () =>{
       const dataBg = await fetch(bgData)
-      const responseData = await dataBg.json()
-      console.log(responseData)
+      const responseData = await dataBg.json()     
+
+      const symbolBg = responseData.symbol
+      const closeBg = responseData.close
+      const highBg = responseData.high
+      const dateBg = responseData.fromDate
+
+      const symbol = document.getElementById('bg_symbol')
+     const high = document.getElementById('bg_high')
+     const close = document.getElementById('bg_close')
+     const datefrom = document.getElementById('bg_fromDate')
+
+      symbol.textContent = symbolBg
+      high.textContent = highBg
+      close.textContent = closeBg
+      datefrom.textContent = dateBg
+
     }
       
 
 
     const fetched_shlx_data = async () =>{
       const dataShlx = await fetch(shlxData)
-      const returnedSHL = await dataShlx.json()
-      console.log(returnedSHL)
+      const responseData = await dataShlx.json()
+
+      const symbolShlx = responseData.symbol
+      const closeShlx = responseData.close
+      const highShlx = responseData.high
+      const dateShlx = responseData.fromDate
+
+      const symbol = document.getElementById('shlx_symbol')
+     const high = document.getElementById('shlx_high')
+     const close = document.getElementById('shlx_close')
+     const datefrom = document.getElementById('shlx_fromDate')
+
+      symbol.textContent = symbolShlx
+      high.textContent = highShlx
+      close.textContent = closeShlx
+      datefrom.textContent = dateShlx
     }
 
    
@@ -84,14 +310,45 @@
     const fetched_pypl_data = async () =>{
       const dataPypl = await fetch(pyplData)
       const responseData = await dataPypl.json()
-      console.log(responseData)
+
+     const symbol = document.getElementById('pypl_symbol')
+     const high = document.getElementById('pypl_high')
+     const close = document.getElementById('pypl_close')
+     const datefrom = document.getElementById('pypl_fromDate')
+
+      const symbolPypl = responseData.symbol
+      const closePypl = responseData.close
+      const highPypl = responseData.high
+      const datePypl = responseData.fromDate
+
+       symbol.textContent = symbolPypl
+      high.textContent = highPypl
+      close.textContent = closePypl
+      datefrom.textContent = datePypl
     }
      
 
     const fetched_rivn_data = async () =>{
       const dataRivn = await fetch(rivnData)
       const responseData = await dataRivn.json()
-      console.log(responseData)
+      
+
+      const symbolRivn = responseData.symbol
+      const closeRivn = responseData.close
+      const highRivn = responseData.high
+      const dateRivn = responseData.fromDate
+
+    
+
+     const symbol = document.getElementById('rivn_symbol')
+     const high = document.getElementById('rivn_high')
+     const close = document.getElementById('rivn_close')
+     const datefrom = document.getElementById('rivn_fromDate')
+
+      symbol.textContent = symbolRivn
+      high.textContent = highRivn
+      close.textContent = closeRivn
+      datefrom.textContent = dateRivn
     }    
     
 
@@ -104,19 +361,10 @@
       setTimeout(fetched_bg_data, 120000)
       setTimeout(fetched_ceg_data, 120000)
       setTimeout(fetched_shlx_data, 120000)
-      setTimeout(fetched_pypl_data, 120000)
-      setTimeout(fetched_rivn_data, 120000)
+      setTimeout(fetched_pypl_data, 130000)
+      setTimeout(fetched_rivn_data, 130000)
 
-      
-      // fetched_xom_data()
-      // fetched_xom_second()
-      // fetched_lng_data()
-      // fetched_rio_data()
-      // fetched_bg_data()
-      // fetched_ceg_data()
-      // fetched_shlx_data()
-      // fetched_pypl_data()
-      // fetched_rivn_data()
+
     }
    runAllFunction()
     
