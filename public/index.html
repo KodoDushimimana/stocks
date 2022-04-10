@@ -4,130 +4,139 @@
   <meta charset="UTF-8">
   <!-- <meta http-equiv="refresh" content="120"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./css/index.css">
   <title>Stock Prices</title>
 </head>
 <body>
   
   <h1>This will be displaying the stock Market Last price</h1>
   <p>Work in progress...</p>
-  <div class="wrapper">
+  <div class="container ">
 
-    <div class="xom">
-      <div class="xom_header">
-        <h2>Exxon Mobile Corp</h2>
+    <div class="xom row card text-center text-white bg-primary mb-3">
+      <div class="xom_header col card-title ">
+        <h2 >Exxon Mobile Corp</h2>   
       </div>
-      <div class="dataset">
-        <ul>
-          <li id="xom_symbol"></li>
-          <li id="xom_high"></li>
-          <li id="xom_close"></li>
-          <li id="xom_fromDate"></li>
+      <div class="datashow col card-body">
+
+        <ul class="list-group">
+          <li class="list-group-item  text-white bg-dark" id="xom_symbol nav-item">symbol</li>
+          <li class="list-group-item  text-white bg-dark" id="xom_high nav-item">High</li>
+          <li class="list-group-item  text-white bg-dark" id="xom_close nav-item">close</li>
+          <li class="list-group-item  text-white bg-dark" id="xom_fromDate nav-item">Date</li>
         </ul>
       </div>
-
-      <div class="xom_two_header">
-        <h2>Exxon Mobile Corp</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="xom_two_symbol"></li>
-          <li id="xom_two_high"></li>
-          <li id="xom_two_close"></li>
-          <li id="xom_two_fromDate"></li>
-        </ul>
-      </div>
-
-      <div class="lng_header">
-        <h2>Cheniere Energy Inc</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="lng_symbol"></li>
-          <li id="lng_high"></li>
-          <li id="lng_close"></li>
-          <li id="lng_fromDate"></li>
-        </ul>
-      </div>
-      
-      <div class="rio_header">
-        <h2>Rio Tinto PLC</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="rio_symbol"></li>
-          <li id="rio_high"></li>
-          <li id="rio_close"></li>
-          <li id="rio_fromDate"></li>
-        </ul>
-      </div>
-
-      <div class="ceg_header">
-        <h2>Constellation Energy Corp</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="ceg_symbol"></li>
-          <li id="ceg_high"></li>
-          <li id="ceg_close"></li>
-          <li id="ceg_fromDate"></li>
-        </ul>
-      </div>
-      
-      <div class="bg_header">
-        <h2>Bunge Ltd</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="bg_symbol"></li>
-          <li id="bg_high"></li>
-          <li id="bg_close"></li>
-          <li id="bg_fromDate"></li>
-        </ul>
-      </div>
-
-      <div class="shlx_header">
-        <h2>Shell Midstream Partners LP</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="shlx_symbol"></li>
-          <li id="shlx_high"></li>
-          <li id="shlx_close"></li>
-          <li id="shlx_fromDate"></li>
-        </ul>
-      </div>
-
-      <div class="pypl_header">
-        <h2>Paypal Holdings Inc</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="pypl_symbol"></li>
-          <li id="pypl_high"></li>
-          <li id="pypl_close"></li>
-          <li id="pypl_fromDate"></li>
-        </ul>
-      </div>
-
-      <div class="rivn_header">
-        <h2>Rivian Automotivate Inc Class A</h2>
-      </div>
-      <div class="dataset">
-        <ul>
-          <li id="rivn_symbol"></li>
-          <li id="rivn_high"></li>
-          <li id="rivn_close"></li>
-          <li id="rivn_fromDate"></li>
-        </ul>
-      </div>
-      
-
-
-
     </div>
 
-   </div>
+    <div class="xom_two row card text-center text-white bg-primary mb-3">
+      <div class="xom_two_heade col card-title">
+         <h2>Exxon Mobile Corp</h2> 
+      </div>
+      <div class="showdata col card-body">
+          <ul class="list-group">
+          <li class="list-group-item  text-white bg-dark" id="xom_two_symbol">symbol</li>
+          <li class="list-group-item  text-white bg-dark" id="xom_two_high">High</li>
+          <li class="list-group-item  text-white bg-dark" id="xom_two_close">Close</li>
+          <li class="list-group-item  text-white bg-dark" id="xom_two_fromDate">Date</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lgn row card text-center text-white bg-primary mb-3">
+        <div class="lng_header col card-title">
+           <h2>Cheniere Energy Inc</h2>
+        </div>        
+        <div class="showdata col card-body">
+          <ul class="list-group">
+            <li class="list-group-item  text-white bg-dark" id="lng_symbol">Symbol</li>
+            <li  class="list-group-item  text-white bg-dark" id="lng_high">High</li>
+            <li  class="list-group-item  text-white bg-dark" id="lng_close">Close</li>
+            <li  class="list-group-item  text-white bg-dark" id="lng_fromDate">Date</li>
+          </ul>
+        </div>
+      </div>
+
+        <div class="rio row card text-center text-white bg-primary mb-3">
+          <div class="rio_header col card-title"><h2>Rio Tinto PLC</h2></div>            
+          <div class="showdata col card-body">
+            <ul class="list-group">
+              <li class="list-group-item  text-white bg-dark" id="rio_symbol">Symbol</li>
+              <li class="list-group-item  text-white bg-dark" id="rio_high">High</li>
+              <li class="list-group-item  text-white bg-dark" id="rio_close">Close</li>
+              <li class="list-group-item  text-white bg-dark" id="rio_fromDate">Date</li>
+            </ul>
+           </div>
+        </div>
+
+      <div class="ceg row card text-center text-white bg-primary mb-3">
+        <div class="col card-title"><h2>Constellation Energy Corp</h2></div>        
+        <div class="dataset col card-body">
+          <ul class="list-group">
+            <li class="list-group-item  text-white bg-dark" id="ceg_symbol">Symbol</li>
+            <li class="list-group-item text-white bg-dark" id="ceg_high">High</li>
+            <li class="list-group-item text-white bg-dark"  id="ceg_close">Close</li>
+            <li class="list-group-item text-white bg-dark" id="ceg_fromDate">Date</li>
+          </ul>
+        </div>
+      </div>
+
+       <div class="bg row card text-center text-white bg-primary mb-3">
+         <div class="col card-title"><h2>Bunge Ltd</h2></div>
+      
+        <div class="dataset col card-body">
+          <ul class="list-goup">
+            <li class="list-group-item text-white bg-dark" id="bg_symbol">Symbol</li>
+            <li class="list-group-item text-white bg-dark" id="bg_high">High</li>
+            <li class="list-group-item text-white bg-dark" id="bg_close">Close</li>
+            <li class="list-group-item text-white bg-dark" id="bg_fromDate">Date</li>
+          </ul>
+        </div>
+      </div>
+
+       <div class="shlx row card text-center text-white bg-primary mb-3">
+       <div class="col card-title"><h2>Shell Midstream Partners LP</h2></div> 
+    
+        <div class="dataset col card-body">
+            <ul class="list-group">
+              <li class="list-group-item text-white bg-dark" id="shlx_symbol">Symbol</li>
+              <li class="list-group-item text-white bg-dark" id="shlx_high">High</li>
+              <li class="list-group-item text-white bg-dark" id="shlx_close">Close</li>
+              <li class="list-group-item text-white bg-dark" id="shlx_fromDate">Date</li>
+            </ul>
+         </div>
+      </div>
+
+      <div class="pypl row card text-center text-white bg-primary mb-3">
+       <div class="col card-title"><h2>Paypal Holdings Inc</h2></div> 
+      
+      <div class="dataset col card-body">
+          <ul class="list-group">
+            <li class="list-group-item text-white bg-dark" id="pypl_symbol">Symbol</li>
+            <li class="list-group-item text-white bg-dark" id="pypl_high">High</li>
+            <li class="list-group-item text-white bg-dark" id="pypl_close">Close</li>
+            <li class="list-group-item text-white bg-dark" id="pypl_fromDate">Date</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rivn row card text-center text-white bg-primary mb-3">
+        <div class="col card-title"><h2>Rivian Automotivate Inc Class A</h2></div>     
+        <div class="dataset col card-body">
+            <ul class="list-group">
+              <li class="list-group-item text-white bg-dark"  id="rivn_symbol">Symbol</li>
+              <li class="list-group-item text-white bg-dark"  id="rivn_high">High</li>
+              <li class="list-group-item text-white bg-dark"  id="rivn_close">Close</li>
+              <li class="list-group-item text-white bg-dark"  id="rivn_fromDate">Date</li>
+            </ul>
+        </div>
+      </div>
+
+   </div><!-- This is the end of the wrapper -->    
+   
+
   <script>
      
 
@@ -369,5 +378,9 @@
    runAllFunction()
     
   </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
