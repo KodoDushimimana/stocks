@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
   <link rel="stylesheet" href="./css/index.css">
   <title>Stock Prices</title>
 </head>
@@ -16,17 +15,17 @@
   <p>Work in progress...</p>
   <div class="container ">
 
-    <div class="xom row card text-center text-white bg-primary mb-3">
+    <div class="xom row card text-center text-white bg-primary shadow p-3 mb-5 bg-body rounded mb-3 ">
       <div class="xom_header col card-title ">
         <h2 >Exxon Mobile Corp</h2>   
       </div>
       <div class="datashow col card-body">
 
         <ul class="list-group">
-          <li class="list-group-item  text-white bg-dark" id="xom_symbol nav-item">symbol</li>
-          <li class="list-group-item  text-white bg-dark" id="xom_high nav-item">High</li>
-          <li class="list-group-item  text-white bg-dark" id="xom_close nav-item">close</li>
-          <li class="list-group-item  text-white bg-dark" id="xom_fromDate nav-item">Date</li>
+          <li class="list-group-item  text-white bg-dark nav-item" id="xom_symbol">symbol</li>
+          <li class="list-group-item  text-white bg-dark nav-item" id="xom_high">High</li>
+          <li class="list-group-item  text-white bg-dark nav-item" id="xom_close">close</li>
+          <li class="list-group-item  text-white bg-dark nav-item" id="xom_fromDate">Date</li>
         </ul>
       </div>
     </div>
@@ -138,11 +137,13 @@
    
 
   <script>
+
+    
      
 
      
      
-     const XOMData = '/xom';
+     const XOMData = '/xom'
      const xomDataTwo = '/xom/second'
      const lngData = '/lng'
      const rioData = '/rio'
@@ -152,15 +153,17 @@
      const pyplData = '/pypl'
      const rivnData = '/rivn'
 
+      
 
       const fetched_xom_data = async () =>{
       const dataXom = await fetch(XOMData)
       const responseData = await dataXom.json()
+      console.log(responseData)
 
       const symbolXom = responseData.symbol
       const closeXom = responseData.close
       const highXom = responseData.high
-      const dateXom = responseData.fromDate
+      const dateXom = responseData.fromDate      
       
 
      const symbol = document.getElementById('xom_symbol')
@@ -174,13 +177,14 @@
       datefrom.textContent = dateXom
 
       
-    }
+     }
     
     //second XOM with less shares
 
      const fetched_xom_second = async () =>{
       const dataXom = await fetch(xomDataTwo)
       const responseData = await dataXom.json()
+
 
      const symbol = document.getElementById('xom_two_symbol')
      const high = document.getElementById('xom_two_high')
@@ -375,7 +379,7 @@
 
 
     }
-   runAllFunction()
+   runAllFunction();
     
   </script>
 

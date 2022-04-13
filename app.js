@@ -11,7 +11,17 @@ const port = process.env.PORT || 3000
 const stock_API = process.env.STOCK_API_KEY;
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appGWfv8R1VHPYYOA');
  const yesterday = dayjs().add(-1, 'day').format('YYYY-MM-DD', 'America/New_York');
-
+//const yesterday = '2022-04-05'
+		
+// const sunday = dayjs().day(0);
+// const monday = dayjs().day(1);
+// const tuesday = dayjs().day(2);
+// const wednesday = dayjs().day(3);
+// const thursday = dayjs().day(4);
+// const friday = dayjs().day(5);
+// const saturday = dayjs().day(6);
+ 
+console.log(`up above`)
 
 const xom_url = `https://api.polygon.io/v1/open-close/XOM/${yesterday}?adjusted=true&apiKey=${stock_API}`;
 const lng_url = `https://api.polygon.io/v1/open-close/LNG/${yesterday}?adjusted=true&apiKey=${stock_API}`;
@@ -22,15 +32,18 @@ const shlx_url = `https://api.polygon.io/v1/open-close/SHLX/${yesterday}?adjuste
 const pypl_url = `https://api.polygon.io/v1/open-close/PYPL/${yesterday}?adjusted=true&apiKey=${stock_API}`;
 const rivn_url = `https://api.polygon.io/v1/open-close/RIVN/${yesterday}?adjusted=true&apiKey=${stock_API}`;
 
-app.get('/xom', async(req, res)=>{   
-      const xomData = await fetch(xom_url);
-      const responseData = await xomData.json();
-      const high = responseData.high
-      const fromDate = responseData.from
-      const close = responseData.close
-      const symbol = responseData.symbol
-
-      base('Stock Market').update('recAyaHaz16yYuOrq',
+app.get('/xom', async(req, res)=>{   	
+	
+		const xomData = await fetch(xom_url);
+    const responseData = await xomData.json();
+		console.log(responseData)
+		
+    const high = responseData.high
+    const fromDate = responseData.from
+    const close = responseData.close
+    const symbol = responseData.symbol
+		
+    base('Stock Market').update('recAyaHaz16yYuOrq',
 				{
 					'Symbol': symbol,
 					' Current Price per Share ': close,
@@ -51,6 +64,8 @@ app.get('/xom', async(req, res)=>{
       close,
       symbol
      })    
+
+			 
 })
 
 //second xom stocks
