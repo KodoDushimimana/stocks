@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 const stock_API = process.env.STOCK_API_KEY;
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appGWfv8R1VHPYYOA');
  const yesterday = dayjs().add(-1, 'day').format('YYYY-MM-DD', 'America/New_York');
-//const yesterday = '2022-04-05'
+
 		
 // const sunday = dayjs().day(0);
 // const monday = dayjs().day(1);
@@ -21,7 +21,7 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appGWf
 // const friday = dayjs().day(5);
 // const saturday = dayjs().day(6);
  
-console.log(`up above`)
+
 
 const xom_url = `https://api.polygon.io/v1/open-close/XOM/${yesterday}?adjusted=true&apiKey=${stock_API}`;
 const lng_url = `https://api.polygon.io/v1/open-close/LNG/${yesterday}?adjusted=true&apiKey=${stock_API}`;
@@ -36,7 +36,7 @@ app.get('/xom', async(req, res)=>{
 	
 		const xomData = await fetch(xom_url);
     const responseData = await xomData.json();
-		console.log(responseData)
+		
 		
     const high = responseData.high
     const fromDate = responseData.from
@@ -54,7 +54,7 @@ app.get('/xom', async(req, res)=>{
 						console.error(err);
 						return;
 					}
-					console.log(record.get('Symbol'));
+					//console.log(record.get('Symbol'));
 				},
 			);
 
@@ -89,7 +89,7 @@ app.get('/xom/second', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -123,7 +123,7 @@ app.get('/lng', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -157,7 +157,7 @@ app.get('/rio', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -192,7 +192,7 @@ app.get('/ceg', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -228,7 +228,7 @@ app.get('/bg', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -264,7 +264,7 @@ app.get('/shlx', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -299,7 +299,7 @@ app.get('/pypl', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 
@@ -334,7 +334,7 @@ app.get('/rivn', async (req, res) => {
 				console.error(err);
 				return;
 			}
-			console.log(record.get('Symbol'));
+			//console.log(record.get('Symbol'));
 		},
 	);
 

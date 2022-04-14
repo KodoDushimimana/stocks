@@ -158,7 +158,7 @@
       const fetched_xom_data = async () =>{
       const dataXom = await fetch(XOMData)
       const responseData = await dataXom.json()
-      console.log(responseData)
+      
 
       const symbolXom = responseData.symbol
       const closeXom = responseData.close
