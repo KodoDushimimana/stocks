@@ -19,10 +19,11 @@
       <div class="xom_header col card-title ">
         <h2 >Exxon Mobile Corp</h2>   
       </div>
-      <div class="datashow col card-body">
+      
+      <div class="datashow col card-body no-data">
 
         <ul class="list-group">
-         <span>Symbol</span> <li class="list-group-item  text-white bg-dark nav-item" id="xom_symbol">Loading ...</li>
+         <span>Symbol</span> <li  class="list-group-item   text-white bg-dark nav-item" id="xom_symbol">Loading ...</li>
          <span>High</span> <li class="list-group-item  text-white bg-dark nav-item" id="xom_high">Loading ...</li>
          <span>Close</span> <li class="list-group-item  text-white bg-dark nav-item" id="xom_close">Loading ...</li>
           <span>Date</span><li class="list-group-item  text-white bg-dark nav-item" id="xom_fromDate">Loading ...</li>
@@ -157,27 +158,40 @@
 
       const fetched_xom_data = async () =>{
       const dataXom = await fetch(XOMData)
-      const responseData = await dataXom.json()
-      
+      const responseData = await dataXom.json()      
+      let dataStatus = responseData.status
 
       const symbolXom = responseData.symbol
       const closeXom = responseData.close
       const highXom = responseData.high
-      const dateXom = responseData.fromDate      
-      
+      const dateXom = responseData.fromDate     
+      console.log(dataStatus)
 
      const symbol = document.getElementById('xom_symbol')
      const high = document.getElementById('xom_high')
      const close = document.getElementById('xom_close')
      const datefrom = document.getElementById('xom_fromDate')
-    
-      symbol.textContent = symbolXom
-      high.textContent = highXom
-      close.textContent = closeXom
-      datefrom.textContent = dateXom
+     const nodata = document.getElementById('no-data')
+     const listItem = document.getElementsByTagName('li')
 
+     if (dataStatus = "NOT_FOUND"){
+         symbol.textContent = status
+          high.textContent = status
+          close.textContent = status
+          datefrom.textContent = status 
+
+           
+      } else{
+
+           symbol.textContent = symbolXom
+          high.textContent = highXom
+          close.textContent = closeXom
+          datefrom.textContent = dateXom    
+        
       
-     }
+    }
+  }
+     
     
     //second XOM with less shares
 
@@ -366,7 +380,7 @@
     
 
     const runAllFunction = () =>{
-
+    
       setTimeout(fetched_xom_data, 60000)
       setTimeout(fetched_xom_second,60000)
       setTimeout(fetched_lng_data, 60000)
@@ -379,7 +393,7 @@
 
 
     }
-   runAllFunction();
+  runAllFunction()
     
   </script>
 
